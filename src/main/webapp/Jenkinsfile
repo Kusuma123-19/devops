@@ -15,7 +15,7 @@ pipeline {
                 git branch: 'main',
                 url: 'https://github.com/Kusuma123-19/devops.git'
 
-                echo "GitHub Repository Cloned Successfully1"
+                echo "GitHub Repository Cloned Successfully2"
             }
         }
 
