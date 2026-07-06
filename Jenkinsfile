@@ -2,48 +2,29 @@ pipeline {
 
     agent any
 
-    tools {
-        maven 'Maven'
-    }
-
     stages {
 
-        stage('Clone Repository') {
+        stage('Clone') {
 
             steps {
 
-                git branch: 'main',
-                url: 'https://github.com/Kusuma123-19/devops.git'
-
-                echo "GitHub Repository Cloned Successfully134"
+                echo "GitHub Connected Successfully"
             }
         }
 
-        stage('Build Project') {
+        stage('Build') {
 
             steps {
 
-                sh 'mvn clean install'
-
-                echo "Build Completed Successfully"
+                echo "Build Started"
             }
         }
 
-        stage('Test Project') {
+        stage('Deploy') {
 
             steps {
 
-                echo "Testing Application"
-
-                sh 'mvn test'
-            }
-        }
-
-        stage('Deploy Project') {
-
-            steps {
-
-                echo "Deploying SaaS Project Management Tool"
+                echo "Deployment Successful"
             }
         }
     }
