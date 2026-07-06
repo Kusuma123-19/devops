@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Portal - Learn DevOps</title>
+<title>SaaS Project Management Tool</title>
 
 <style>
 
@@ -11,322 +11,501 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#f4f6f9;
+    background:#f4f7ff;
     color:#333;
 }
 
-header{
-    background:#0d6efd;
+/* Navbar */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#0f172a;
     color:white;
-    padding:20px;
-    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-header h1{
-    font-size:40px;
-    margin-bottom:10px;
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    color:#38bdf8;
 }
 
-header p{
-    font-size:18px;
+nav ul{
+    display:flex;
+    list-style:none;
 }
 
-nav{
-    background:#222;
-    padding:15px;
-    text-align:center;
+nav ul li{
+    margin:0 15px;
 }
 
-nav a{
+nav ul li a{
     color:white;
     text-decoration:none;
-    margin:15px;
     font-size:18px;
     transition:0.3s;
 }
 
-nav a:hover{
-    color:#0d6efd;
-}
-
-.hero{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    text-align:center;
-    padding:80px 20px;
-    background:linear-gradient(to right,#0d6efd,#6610f2);
-    color:white;
-}
-
-.hero h2{
-    font-size:45px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:20px;
-    max-width:800px;
-    line-height:1.8;
+nav ul li a:hover{
+    color:#38bdf8;
 }
 
 .btn{
-    margin-top:30px;
-    padding:15px 30px;
+    padding:12px 25px;
+    background:#38bdf8;
     border:none;
-    background:white;
-    color:#0d6efd;
-    font-size:18px;
-    border-radius:5px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#222;
     color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
 }
 
-.container{
-    width:90%;
-    margin:auto;
-    padding:50px 0;
+/* Hero Section */
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px 8%;
+    flex-wrap:wrap;
+    gap:40px;
 }
 
-.section-title{
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+    font-size:60px;
+    color:#0f172a;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.hero-text button{
+    padding:15px 35px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.hero-image{
+    flex:1;
     text-align:center;
-    font-size:35px;
-    margin-bottom:40px;
-    color:#0d6efd;
 }
 
-.card-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+.hero-image img{
+    width:100%;
+    max-width:550px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* About Section */
+
+.about{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.about h2{
+    font-size:42px;
+    margin-bottom:50px;
+    color:#0f172a;
+}
+
+.about-container{
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
 }
 
 .card{
     background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0px 4px 10px rgba(0,0,0,0.1);
-    transition:0.3s;
+    width:300px;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.5s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100px;
+    margin-bottom:20px;
 }
 
 .card h3{
     margin-bottom:15px;
-    color:#0d6efd;
+    color:#2563eb;
 }
 
 .card p{
-    line-height:1.7;
+    line-height:1.6;
 }
 
-.steps{
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0px 4px 10px rgba(0,0,0,0.1);
-}
+/* Features */
 
-.steps ol{
-    padding-left:25px;
-}
-
-.steps li{
-    margin:15px 0;
-    font-size:18px;
-    line-height:1.7;
-}
-
-footer{
-    background:#222;
+.features{
+    padding:80px 8%;
+    background:#0f172a;
     color:white;
     text-align:center;
-    padding:20px;
-    margin-top:50px;
 }
+
+.features h2{
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.feature-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.feature{
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.feature:hover{
+    transform:scale(1.05);
+}
+
+.feature h3{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+/* Dashboard */
+
+.dashboard{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.dashboard h2{
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.dashboard-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.dashboard-card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-10px);
+}
+
+.dashboard-card h3{
+    margin-bottom:20px;
+    color:#2563eb;
+}
+
+.dashboard-card span{
+    font-size:45px;
+    font-weight:bold;
+    color:#0f172a;
+}
+
+/* Contact */
+
+.contact{
+    padding:80px 8%;
+    background:#e0f2fe;
+    text-align:center;
+}
+
+.contact h2{
+    font-size:42px;
+    margin-bottom:30px;
+}
+
+.contact form{
+    max-width:600px;
+    margin:auto;
+}
+
+.contact input,
+.contact textarea{
+    width:100%;
+    padding:15px;
+    margin:15px 0;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.contact button{
+    padding:15px 30px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* Footer */
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* Responsive */
 
 @media(max-width:768px){
 
-    header h1{
-        font-size:30px;
+    .hero{
+        flex-direction:column;
     }
 
-    .hero h2{
-        font-size:32px;
+    .hero-text h1{
+        font-size:40px;
     }
 
-    .hero p{
-        font-size:18px;
+    nav ul{
+        display:none;
     }
-
 }
 
 </style>
-
 </head>
 
 <body>
 
-<header>
-    <h1>Student Portal</h1>
-    <p>Learn DevOps from Beginner to Advanced</p>
+<!-- Navbar -->
+
+<header class="navbar">
+
+    <div class="logo">TaskFlow</div>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <button class="btn">Get Started</button>
+
 </header>
 
-<nav>
-    <a href="#why">Why DevOps</a>
-    <a href="#uses">Uses</a>
-    <a href="#steps">Learning Steps</a>
-</nav>
+<!-- Hero Section -->
 
 <section class="hero">
-    <h2>Welcome to DevOps Learning Portal</h2>
-    <p>
-        DevOps is one of the most demanded technologies in the IT industry.
-        It helps developers and operations teams work together to build,
-        test, deploy, and maintain applications faster and more efficiently.
-    </p>
 
-    <button class="btn" onclick="showMessage()">
-        Start Learning
-    </button>
+    <div class="hero-text">
+
+        <h1>Modern SaaS Project Management Tool</h1>
+
+        <p>
+            Manage projects, tasks, deadlines, analytics, team collaboration,
+            and productivity with one smart cloud-based platform.
+        </p>
+
+        <button onclick="showMessage()">Start Free Trial</button>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="project">
+
+    </div>
+
 </section>
 
-<div class="container" id="why">
+<!-- About -->
 
-    <h2 class="section-title">Why Students Need to Learn DevOps</h2>
+<section class="about">
 
-    <div class="card-container">
+    <h2>Why This Project Is Needed?</h2>
+
+    <div class="about-container">
 
         <div class="card">
-            <h3>High Demand</h3>
+
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+
+            <h3>Team Collaboration</h3>
+
             <p>
-                DevOps engineers are highly demanded in software companies,
-                cloud industries, and startups because companies need faster
-                software delivery and automation.
+                Teams can work together from anywhere using cloud-based SaaS technology.
             </p>
+
         </div>
 
         <div class="card">
-            <h3>Better Career Opportunities</h3>
+
+            <img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png">
+
+            <h3>Task Tracking</h3>
+
             <p>
-                Learning DevOps increases job opportunities in cloud computing,
-                automation, CI/CD pipelines, infrastructure management, and
-                deployment engineering.
+                Helps managers monitor project deadlines and task completion easily.
             </p>
+
         </div>
 
         <div class="card">
-            <h3>Industry Growth</h3>
+
+            <img src="https://cdn-icons-png.flaticon.com/512/2620/2620971.png">
+
+            <h3>Cloud Access</h3>
+
             <p>
-                Most modern companies use DevOps tools like Docker, Jenkins,
-                Kubernetes, AWS, GitHub, and Terraform for application deployment.
+                Access your projects securely anytime and anywhere through SaaS platforms.
             </p>
-        </div>
 
-    </div>
-
-</div>
-
-<div class="container" id="uses">
-
-    <h2 class="section-title">Uses of DevOps</h2>
-
-    <div class="card-container">
-
-        <div class="card">
-            <h3>Automation</h3>
-            <p>
-                DevOps automates software testing, deployment,
-                server management, and monitoring processes.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Continuous Integration</h3>
-            <p>
-                Developers can continuously integrate code changes
-                using Jenkins, GitHub Actions, and GitLab CI/CD.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Cloud Deployment</h3>
-            <p>
-                Applications can be deployed easily on cloud platforms
-                like AWS, Azure, and Google Cloud.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Faster Delivery</h3>
-            <p>
-                DevOps helps organizations deliver software updates
-                quickly with fewer errors and downtime.
-            </p>
         </div>
 
     </div>
 
-</div>
+</section>
 
-<div class="container" id="steps">
+<!-- Features -->
 
-    <h2 class="section-title">Steps to Learn DevOps</h2>
+<section class="features">
 
-    <div class="steps">
+    <h2>Project Features</h2>
 
-        <ol>
+    <div class="feature-box">
 
-            <li>Learn Linux Basics and Linux Commands</li>
+        <div class="feature">
+            <h3>Dashboard</h3>
+            <p>Track all project activities in one place.</p>
+        </div>
 
-            <li>Understand Networking Concepts</li>
+        <div class="feature">
+            <h3>Analytics</h3>
+            <p>Generate reports and project insights instantly.</p>
+        </div>
 
-            <li>Learn Git and GitHub</li>
+        <div class="feature">
+            <h3>Notifications</h3>
+            <p>Receive updates and reminders in real time.</p>
+        </div>
 
-            <li>Learn Shell Scripting</li>
-
-            <li>Understand CI/CD Concepts</li>
-
-            <li>Learn Jenkins for Automation</li>
-
-            <li>Learn Docker for Containerization</li>
-
-            <li>Learn Kubernetes for Orchestration</li>
-
-            <li>Learn AWS Cloud Services</li>
-
-            <li>Learn Monitoring Tools like Prometheus and Grafana</li>
-
-            <li>Practice Real-Time Projects and Deploy Applications</li>
-
-        </ol>
+        <div class="feature">
+            <h3>Security</h3>
+            <p>Secure user authentication and encrypted data storage.</p>
+        </div>
 
     </div>
 
-</div>
+</section>
+
+<!-- Dashboard -->
+
+<section class="dashboard">
+
+    <h2>Live Project Dashboard</h2>
+
+    <div class="dashboard-container">
+
+        <div class="dashboard-card">
+            <h3>Projects</h3>
+            <span>25+</span>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Teams</h3>
+            <span>12</span>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Completed</h3>
+            <span>180</span>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Pending</h3>
+            <span>15</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact -->
+
+<section class="contact">
+
+    <h2>Contact Us</h2>
+
+    <form>
+
+        <input type="text" placeholder="Enter Your Name">
+
+        <input type="email" placeholder="Enter Your Email">
+
+        <textarea rows="5" placeholder="Enter Your Message"></textarea>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+</section>
+
+<!-- Footer -->
 
 <footer>
-    <h3>DevOps Student Portal</h3>
-    <p>Designed for Students to Learn DevOps Easily</p>
+
+    <h3>TaskFlow SaaS Project Management Tool</h3>
+
+    <p>
+        Smart collaboration platform for project planning, task management,
+        and team productivity.
+    </p>
+
 </footer>
 
 <script>
 
 function showMessage(){
 
-    alert("Welcome to DevOps Learning Journey!");
+    alert("Welcome to TaskFlow SaaS Project Management Tool!");
 
 }
 
